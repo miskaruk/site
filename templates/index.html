@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Главная страница
+{% endblock %}
+
+{% block menu %}
+             <a class="nav-link active" aria-current="page" href="/">Главная</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="directions">Информация о направлении</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="about">Образовательные модули</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="gallery">Фотогалерея</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="contacts">Контакты</a>
+          </li>
+{% endblock %}
+
+
+{% block body %}
+<h1>Главная страница</h1>
+
+{% if articles|length > 0 %}
+{% for el in articles %}
+<div class="alert alert-info">
+<h2>{{el.title}}</h2>
+<p>{{el.intro}}</p>
+    <p><b>Дата: {{ el.date.date() }}</b></p>
+    <a href="/posts/{{ el.id }}" class="btn btn-primary">Читать...</a>
+</div>
+{% endfor %}
+{% else %}
+<p>Пока у нас нет статей</p>
+{% endif %}
+{% endblock %}

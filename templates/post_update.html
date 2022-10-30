@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Обновление статьи
+{% endblock %}
+
+{% block menu %}
+             <a class="nav-link" aria-current="page" href="/">Главная</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="directions">Информация о направлении</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="about">Образовательные модули</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="gallery">Фотогалерея</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="contacts">Контакты</a>
+          </li>
+{% endblock %}
+
+
+{% block body %}
+<h1>Обновление статьи</h1>
+<form method="post">
+<input type="text" name="title" id="title" class="form-control" value = {{article.title}} placeholder="Введите название статьи"><br>
+<textarea name="intro" id="intro" class="form-control"  placeholder="Введите анонс">{{article.intro}}</textarea><br>
+<textarea name="text" id="text" class="form-control" placeholder="Введите текст статьи">{{article.text}}</textarea><br>
+<input type="submit" class="btn btn-primary" value="Обновить">
+    </form>
+{% endblock %}

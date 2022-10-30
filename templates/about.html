@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Образовательные модули
+{% endblock %}
+
+{% block menu %}
+ <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/">Главная</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="directions">Информация о направлении</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link active" href="about">Образовательные модули</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="gallery">Фотогалерея</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="contacts">Контакты</a>
+          </li>
+{% endblock %}
+
+
+{% block body %}
+<div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="{{ url_for('static',filename='img/2.jpg') }}" class="d-block mx-lg-auto img-fluid" alt="Темы начальной загрузки" width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold lh-1 mb-3">Программирование на языке Python</h1>
+        <p class="lead">Выбор своего первого языка программирования — это очень сложная задача, и поэтому курс построен таким образом, чтобы помочь учащимся заняться программированием и понять в каком направлении им хотелось бы развиваться дальше. Изучая программирование, обучающиеся получают глубокое понимание принципов работы компьютера, организации ввода, вывода и хранения информации, принципов построения диалоговых приложений, познают азы профессии программиста. В рамках образовательной программы «Программирование на языке Python» обучающийся познакомится с средой программирования PyCharm, затем, пожалуй, с одним из самых универсальных языков программирования Python.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+
+         <a class="btn btn-primary"  href="{{ url_for('static',filename='file/python.pdf') }}">Скачать программу курса</a>
+         </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="{{ url_for('static',filename='img/1.jpg') }}" class="d-block mx-lg-auto img-fluid" alt="Темы начальной загрузки" width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold lh-1 mb-3">Программирование на языке Scratch</h1>
+        <p class="lead">Дети будут создавать игры и интерактивные мультфильмы. Данная программа даёт возможность проявить свои творческие способности и понять ключевые основы программирования через занимательную игру.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+
+         <a class="btn btn-primary"  href="{{ url_for('static',filename='file/scratch.pdf') }}">Скачать программу курса</a>
+         </div>
+      </div>
+    </div>
+  </div>
+
+<div class="px-4 pt-5 my-5 text-center border-bottom">
+    <h1 class="display-4 fw-bold"><ya-tr-span data-index="4-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Centered screenshot" data-translation="Скриншот по центру" data-ch="0" data-type="trSpan">Программирование роботов</ya-tr-span></h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Сегодня потребность в программировании роботов стала повседневной задачей для продвинутого учащегося. Хотя правильнее сказать не роботов, а контроллеры, которые управляют роботами. Программа «Программирование роботов» включает в себя основные функции, которые необходимы в современном мире, для понимания основ программирования робототехнических устройств. После изучения модулей, обучающийся может начинать программировать уже конкретные устройства, как виртуальные, так и реальные, в частности роботов или электронные устройства (например, «умный дом»).</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+       <a class="btn btn-primary"  href="{{ url_for('static',filename='file/robo.pdf') }}">Скачать программу курса</a>
+      </div>
+    </div>
+
+      <div class="container px-5">
+        <img src="{{ url_for('static',filename='img/3.jpg') }}" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Пример изображения" width="700" height="500" loading="lazy">
+      </div>
+
+  </div>
+
+{% endblock %}

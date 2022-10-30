@@ -1,0 +1,29 @@
+1) Создаём проект в django
+2) pip install flask
+3) pip install flask-sqlalchemy
+
+
+после создания бд, в терминале пишем команды:
+
+1) python - чтобы перейти в интерактивный режим
+2) from app import db 
+3) db.create_all() - появится файл бд
+4) exit() - выход из режима
+
+
+
+для загрузки на heroku
+1) Регистрируемся на heroku и качаем heroku cli https://devcenter.heroku.com/articles/heroku-cli
+2) Качаем git https://git-scm.com/downloads
+3) На сайте heroku создаём новый сайт
+4) pip install gunicorn
+5) pip freeze > requirements.txt - создаём файл с зависимостями
+6) создаём файл Procfile - без разрешения! В нём прописываем web: gunicorn app:app
+7) В терминале пишем heroku login, авторизируемся
+8) git init
+9) heroku git:clone -a flask-example24 (flask-example24 - имя проекта в heroku)
+10) git add .
+11) git commit -am "make it better"
+12) git push heroku master
+
+.\venv\Scripts\activate     активировать venv !!!!!

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Профиль
+{% endblock %}
+
+{% block menu %}
+             <a class="nav-link" aria-current="page" href="/">Главная</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="directions">Информация о направлении</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="about">Образовательные модули</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="gallery">Фотогалерея</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="contacts">Контакты</a>
+          </li>
+{% endblock %}
+
+
+{% block body %}
+<h1>Профиль пользователя</h1>
+{% if login == current_user.login %}
+<main class="container">
+  <div class="d-flex align-items-center p-3 my-3 bg-purple rounded shadow-sm">
+    <img class="me-3" src="{{ url_for('static',filename='img/user_avatar.png') }}"  alt="" width="50" height="50">
+    <h1>{{login}}</h1>
+  </div>
+
+  <div class="my-3 p-3 bg-body rounded shadow-sm">
+    <h6 class="border-bottom pb-2 mb-0">Рейтинг</h6>
+    <div class="d-flex text-muted pt-3">
+      <img class="me-3" src="{{ url_for('static',filename='img/star.png') }}"  alt="" width="50" height="50">
+      <p class="pb-3 mb-0 small lh-sm border-bottom">
+        <strong class="d-block text-gray-dark">{{score}} очков</strong>
+        Рейтинг будет добавлен позже
+      </p>
+    </div>
+  </div>
+</main>
+{% else %}
+<p>Нет доступа к данной странице! Возможно, вы не вошли или вошли под другим логином.</p>
+{% endif %}
+{% endblock %}
